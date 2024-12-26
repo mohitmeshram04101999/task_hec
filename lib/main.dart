@@ -4,6 +4,7 @@ import 'package:hecker_task/providers/auth_provider.dart';
 import 'package:hecker_task/providers/cartProvider.dart';
 import 'package:hecker_task/providers/productPovider.dart';
 import 'package:hecker_task/screens/loginScreen.dart';
+import 'package:hecker_task/screens/splashScreen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -40,6 +41,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     SC.getScreen(context);
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         
@@ -62,7 +64,7 @@ class _MyAppState extends State<MyApp> {
           primary: Colors.blue,
         )
       ),
-      home: LoginScreen(),
+      home: SplashScreen(),
     );
   }
 }

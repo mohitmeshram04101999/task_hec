@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hecker_task/component/cartTile.dart';
 import 'package:hecker_task/component/daimention.dart';
+import 'package:hecker_task/providers/auth_provider.dart';
 import 'package:hecker_task/providers/cartProvider.dart';
 import 'package:hecker_task/screens/ShoppingScreen.dart';
 import 'package:provider/provider.dart';
@@ -35,6 +36,11 @@ class _HomePageState extends State<HomePage> {
 
         appBar: AppBar(
           title: Text("Hi-Fi Shop & Service My Cart"),
+          actions: [
+            IconButton(onPressed: (){
+              Provider.of<AuthProvider>(context,listen: false).logOut(context);
+            }, icon: Icon(Icons.logout))
+          ],
         ),
 
         body:  (p.loading)?Center(child: CircularProgressIndicator(),):

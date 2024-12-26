@@ -33,6 +33,13 @@ class Prefrence{
     return d;
   }
 
+  Future<void> clear() async
+  {
+    var sp = await SharedPreferences.getInstance();
+    sp.clear();
+  }
+
+
   Future<List<Product>?> getCart() async
   {
     var sp = await SharedPreferences.getInstance();

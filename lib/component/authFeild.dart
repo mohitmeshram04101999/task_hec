@@ -8,8 +8,10 @@ class AuthField extends StatelessWidget {
   final String? hintText;
   final Widget? suffix;
   final TextEditingController? controller;
+  final String? Function(String?)? validator;
   const AuthField({
     this.icon,
+    this.validator,
     this.hintText,
     this.controller,
     this.suffix,
@@ -18,9 +20,10 @@ class AuthField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
       obscureText: hideText,
       controller: controller,
+      validator: validator,
       decoration: InputDecoration(
         prefixIcon: icon,
           prefixIconColor: Colors.grey.shade400,
